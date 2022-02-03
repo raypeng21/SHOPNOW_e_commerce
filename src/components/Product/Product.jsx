@@ -1,8 +1,25 @@
 import React from 'react';
 import "./product.scss"
-
-
+import  {useStateValue}  from '../../StateProvider';
 export default function Product({id, title, img, price,rating}) {
+
+  const [{cart}, dispatch] = useStateValue();
+
+  console.log("This is  the cart", cart);
+
+  const addToCart = () => {
+      //displatch item into data layer
+      dispatch({
+        type: "ADD_TO_CART",
+        item:{
+          id:id,
+          title:title,
+          img:img,
+          price:price,
+          rating:rating,
+        },
+      });
+    };
   return (
   
   <div className='product'>
@@ -23,7 +40,7 @@ export default function Product({id, title, img, price,rating}) {
       </div>
       <img className='product_picture' src={img} alt="" />
       
-      <button className='product_button'>Add to Basket</button>
+      <button onClick={addToCart}>Add to Cart</button>
   </div>
   );
 }

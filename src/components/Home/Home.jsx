@@ -9,9 +9,18 @@ export default function Home() {
       
             <div className="home_row">
                 <Product
+                id = {123}
                 title = "Samsung 65' TV"
                 img="https://m.media-amazon.com/images/I/410+HZp6JSL._AC_SY200_.jpg"
                 price = {1599.99}
+                rating={4}
+                
+                />
+                <Product
+                id = {456}
+                title = "Samsung 35' TV"
+                img="https://m.media-amazon.com/images/I/410+HZp6JSL._AC_SY200_.jpg"
+                price = {199.99}
                 rating={4}
                 
                 />
