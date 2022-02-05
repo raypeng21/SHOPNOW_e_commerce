@@ -4,10 +4,17 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { Link } from 'react-router-dom';
 import  {useStateValue}  from '../../StateProvider';
+import { auth } from '../../firebase';
 
 export default function Header() {
 
-  const [{cart}] = useStateValue();
+
+  const handleAuthentication = () =>{
+    if(user){
+      auth.signOut();
+    }
+  } 
+  const [{cart, user}] = useStateValue();
 
   return (
     <div className='header'>
@@ -18,17 +25,20 @@ export default function Header() {
 
         <div className="header_search">
           <input className='header_search_input' type="text" />
-          <SearchIcon className='header_searchIcon'/ >
+          <SearchIcon className='header_searchIcon' />
         </div>
 
 
 
         <div className="header_nav">
-            <div className="header_option">
-              <span className='header_option_line_one'>Hello</span>
-              <span className='header_option_line_two'>Sign in</span>
-
+          <Link to = {!user && "/signin"}>
+          <div onClick={handleAuthentication} className="header_option">
+              <span className='header_option_line_one'>{user? "Hello, "+ user.email : "Hello Guest" } </span>
+              <span className='header_option_line_two'>{user ? "Sign out" : "Sign in"}</span>
             </div>
+          
+          </Link>
+
 
             <div className="header_option">
               <span className='header_option_line_one'>Return</span>
@@ -36,7 +46,7 @@ export default function Header() {
             </div>
 
             <div className="header_option">
-              <span className='header_option_line_one'>Your</span>
+              <span className='header_option_line_one'>Become</span>
               <span className='header_option_line_two'>Nower</span>
             </div>
 

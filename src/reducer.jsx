@@ -1,5 +1,6 @@
 export const initialState = {
-        cart:[]
+        cart:[],
+        user:null
     }
 
  export const getCartTotal = (cart) => 
@@ -31,6 +32,17 @@ export const initialState = {
                 ...state,
                 cart: newCart
             };
+
+        case "SET_USER":
+            return{
+                ...state,
+                user:action.user
+            } 
+
+
+
+
+
              default:
                  return state;
      }

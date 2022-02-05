@@ -3,7 +3,7 @@ import "./product.scss"
 import  {useStateValue}  from '../../StateProvider';
 export default function Product({id, title, img, price,rating}) {
 
-  const [{cart}, dispatch] = useStateValue();
+  const [ {cart}, dispatch] = useStateValue();
 
   console.log("This is  the cart", cart);
 
