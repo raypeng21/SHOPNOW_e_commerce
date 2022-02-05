@@ -25,5 +25,18 @@
     border: 1px solid;
     margin-top: 10px;
     border-color: #363b6b;
+
+    &:hover {
+      background-color: #fff;
+      cursor: pointer;
+      transform: scale(1.05);
+      transition: all 0.2s ease;
+    }
+
+    &:active {
+      background-color: #363b6b;
+      transform: scale(0.95);
+      transition: all 0.2s ease;
+    }
   }
 }
