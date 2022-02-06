@@ -33,7 +33,7 @@ export default function Header() {
         <div className="header_nav">
           <Link to = {!user && "/signin"}>
           <div onClick={handleAuthentication} className="header_option">
-              <span className='header_option_line_one'>{user? "Hello, "+ user.email : "Hello Guest" } </span>
+              <span className='header_option_line_one'>Hello {user ? ", "+ user.email : " Guest" } </span>
               <span className='header_option_line_two'>{user ? "Sign out" : "Sign in"}</span>
             </div>
           

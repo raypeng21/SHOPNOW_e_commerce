@@ -29,7 +29,7 @@ function SignIn() {
         .createUserWithEmailAndPassword(email, password)
         .then((auth) => {
             //successfully created account
-            console.log(auth);
+            // console.log(auth);
 
             if (auth) {
                 history.push("/")

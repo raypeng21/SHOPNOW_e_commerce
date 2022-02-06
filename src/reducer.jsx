@@ -7,7 +7,7 @@ export const initialState = {
     cart?.reduce((amount, item) => item.price + amount, 0);
  
  const reducer = (state, action) =>{
-     console.log(action);
+    //  console.log(action);
      switch(action.type){
          case "ADD_TO_CART":
              return {
@@ -35,9 +35,15 @@ export const initialState = {
 
         case "SET_USER":
             return{
-                ...state,
+                ...state, 
                 user:action.user
             } 
+
+        case "EMPTY_CART":
+            return{
+                ...state,
+                cart:[]
+            }
 
 
 

@@ -3,7 +3,7 @@ import "./checkoutproduct.scss"
 
 import  {useStateValue}  from '../../StateProvider';
 
-function ChechoutProduct({id, img, title, price, rating}) {
+function CheckoutProduct({id, img, title, price, rating}) {
 
     const [{cart}, dispatch] = useStateValue();
 
@@ -45,4 +45,4 @@ function ChechoutProduct({id, img, title, price, rating}) {
     );
 }
 
-export default ChechoutProduct;
+export default CheckoutProduct;

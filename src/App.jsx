@@ -7,6 +7,14 @@ import Checkout from './components/Checkout/Checkout';
 import SignIn from './components/SignIn/SignIn';
 import { auth } from './firebase';
 import { useStateValue } from './StateProvider';
+import Payment from './components/Payment/Payment';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import Orders from './components/Orders/Orders';
+
+const promise = loadStripe('pk_test_51KQDfxCnboDPPE0WQvtAVudaHkNKgFm01H5xOc1hEEVMBKoCcrUvYnFxWn2HqZYY59JP3Hp6qa47kG8gADN4aDEI00I9QfaJGP');
+// Stripe Public Key
+
 
 function App() {
  
@@ -14,7 +22,7 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged(authUser => {
-      console.log("The user is ",authUser);
+      // console.log("The user is ",authUser);
 
       if(authUser){ //user status is logged in
         dispatch({
@@ -38,6 +46,11 @@ function App() {
 
               <Switch>
 
+              <Route path='/orders'>
+                    <Header />
+                    <Orders />
+                </Route>
+
               <Route path='/signin'>
                     <Header />
                     <SignIn />
@@ -48,6 +61,13 @@ function App() {
                     <Checkout />
                 </Route>
 
+
+                <Route path='/payment'>
+                    <Header />
+                    <Elements stripe = {promise}>
+                      <Payment />
+                    </Elements>
+                    </Route>
 
                 <Route path='/'>
                     <Header />

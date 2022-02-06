@@ -5,7 +5,7 @@ export default function Product({id, title, img, price,rating}) {
 
   const [ {cart}, dispatch] = useStateValue();
 
-  console.log("This is  the cart", cart);
+  // console.log("This is  the cart", cart);
 
   const addToCart = () => {
       //displatch item into data layer
