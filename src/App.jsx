@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import './App.css';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -11,6 +10,7 @@ import Payment from './components/Payment/Payment';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import Orders from './components/Orders/Orders';
+import Register from './components/Register/Register';
 
 const promise = loadStripe('pk_test_51KQDfxCnboDPPE0WQvtAVudaHkNKgFm01H5xOc1hEEVMBKoCcrUvYnFxWn2HqZYY59JP3Hp6qa47kG8gADN4aDEI00I9QfaJGP');
 // Stripe Public Key
@@ -50,6 +50,13 @@ function App() {
                     <Header />
                     <Orders />
                 </Route>
+
+
+
+              <Route path='/register'>
+                    <Header />
+                    <Register />
+              </Route>
 
               <Route path='/signin'>
                     <Header />

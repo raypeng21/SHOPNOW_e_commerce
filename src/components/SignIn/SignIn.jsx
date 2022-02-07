@@ -22,22 +22,7 @@ function SignIn() {
 
     }
 
-    const register = e =>{
-        e.preventDefault();
 
-        auth
-        .createUserWithEmailAndPassword(email, password)
-        .then((auth) => {
-            //successfully created account
-            // console.log(auth);
-
-            if (auth) {
-                history.push("/")
-            }
-        })
-        .catch(error => alert(error.message))
-
-    }
   return (
   
     <div className='signin'>
@@ -65,8 +50,11 @@ function SignIn() {
                 By signing-in you agree to the SHOPNOW Conditions of Use and Sale. Please see our Privacy Notice, our Cookies Notice and our Interest-based Ads Notice.
             </p>
 
-            <button onClick={register}
-             className='login_registerButton'>Create your ShopNow Account</button>
+            <Link to = "/register">
+            <button
+             className='login_registerButton'>Create new ShopNow Account</button>
+            </Link>
+
         </div>
 
     </div>
