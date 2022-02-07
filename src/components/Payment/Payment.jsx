@@ -53,8 +53,8 @@ function Payment() {
         }}).then(({paymentIntent}) => {
             //push order to the database`
             db
-                .collection('user')
-                .doc(user?.id)
+                .collection('users')
+                .doc(user?.uid)
                 .collection('orders')
                 .doc(paymentIntent.id)
                 .set({
@@ -142,7 +142,10 @@ function Payment() {
 
             <div className="paymentDetails">
                 <form onSubmit={handleSubmit}>
-                    <CardElement onChange = {handleChange}/>
+                    <div className="cardContainer">
+                        <CardElement onChange = {handleChange}/>
+
+                    </div>
 
                     <div className="paymentPriceContainer">
                         <CurrencyFormat

@@ -30,6 +30,35 @@
       }
       .paymentDetails {
         flex: 0.8;
+
+        .cardContainer {
+          width: 50%;
+        }
+        .paymentPriceContainer {
+          button {
+            width: 300px;
+            height: 50px;
+            background-color: #c1c5e9;
+            border: 1px solid;
+            margin-top: 10px;
+            border-color: #363b6b;
+            color: #363b6b;
+            font-size: 16px;
+
+            &:hover {
+              background-color: #fff;
+              cursor: pointer;
+              transform: scale(1.05);
+              transition: all 0.2s ease;
+            }
+
+            &:active {
+              background-color: #363b6b;
+              transform: scale(0.95);
+              transition: all 0.2s ease;
+            }
+          }
+        }
       }
     }
   }

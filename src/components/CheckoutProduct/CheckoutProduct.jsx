@@ -3,7 +3,7 @@ import "./checkoutproduct.scss"
 
 import  {useStateValue}  from '../../StateProvider';
 
-function CheckoutProduct({id, img, title, price, rating}) {
+function CheckoutProduct({id, img, title, price, rating, hideButton}) {
 
     const [{cart}, dispatch] = useStateValue();
 
@@ -35,10 +35,14 @@ function CheckoutProduct({id, img, title, price, rating}) {
                 .map((_, I) => (
                     <p>⭐</p>
                 ))}
-
             </p>
 
-            <button onClick={removeFromCart}>Remove From Cart</button>
+            {!hideButton && (
+
+                <button onClick={removeFromCart}>Remove From Cart</button>
+
+            )}
+
 
         </div>
     </div>
