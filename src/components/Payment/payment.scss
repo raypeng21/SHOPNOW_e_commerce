@@ -24,6 +24,15 @@
       }
       .paymentAddress {
         flex: 0.8;
+        form {
+          display: flex;
+          flex-direction: column;
+          input {
+            width: 500px;
+            height: 30px;
+            margin: 2px;
+          }
+        }
       }
       .paymentItems {
         flex: 0.8;

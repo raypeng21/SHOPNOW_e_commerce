@@ -84,6 +84,8 @@ function Payment() {
 
     }
 
+
+
   return (
   
 
@@ -106,9 +108,33 @@ function Payment() {
             </div>
 
             <div className="paymentAddress">
-                <p>{user?.email}</p>
-                <p>838 Stensrud Rd</p>
-                <p>Saskatoon, SK, CA</p>
+                <p>{user?.email}</p>    
+                <form>
+                    <input 
+                    name={"FirstName"}
+                    placeholder={"First Name"}
+                    />
+                    <input 
+                    name={"LastName"}
+                    placeholder={"Last Name"}
+                    />
+                    <input 
+                    name={"street_address"}
+                    placeholder={"Street Address"}
+                    />
+                    <input 
+                    name={"city"}
+                    placeholder={"City"}
+                    />
+                    <input
+                    name={"state"}
+                    placeholder={"State"}
+                    />
+                    <input 
+                    name={"zip_code"}
+                    placeholder={"Zipcode"}
+                    />
+            </form>
             </div>
         </div>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState}from 'react';
 import "./subtotal.scss";
 import CurrencyFormat from 'react-currency-format';
 import  {useStateValue}  from '../../StateProvider';
@@ -7,10 +7,18 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 function Subtotal() {
 
-
   const history = useHistory();
   const [{cart}] = useStateValue();
+  
+  const checkEmptyCart = () =>{
 
+    if (cart.length <= 0){
+        alert("You don't have any item in your cart!")
+
+    }else{
+        history.push('/payment')
+    }
+  }
 
 
   return <div className='subtotal' >
@@ -32,7 +40,7 @@ function Subtotal() {
           prefix = {"$"}
       />
 
-      <button onClick={e => history.push('/payment')}>Proceed to Checlout</button>
+      <button onClick={checkEmptyCart}>Proceed to Checlout</button>
   </div>;
 }
 

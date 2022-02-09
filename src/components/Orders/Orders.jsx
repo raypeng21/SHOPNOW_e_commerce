@@ -11,6 +11,7 @@ function Orders() {
 const [{cart, user}, dispatch] = useStateValue();
 const [orders, setOrders] = useState([]);
 
+
 useEffect (() =>{
     if(user) {  //check if user exist
         db
@@ -31,9 +32,12 @@ useEffect (() =>{
 }, [user] )
 
 
+
+
+
   return (
   <div className='orders'>
-      <h1>Your Orders</h1>
+      <h1>{user ?  "Order History" : "Please Sign in to view your orders"}</h1>
 
 
     <div className="orderContainer">

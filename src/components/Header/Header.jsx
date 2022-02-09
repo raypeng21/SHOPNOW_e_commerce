@@ -18,6 +18,9 @@ export default function Header() {
 
   return (
     <div className='header'>
+
+      <div className="mainHeader">
+
       <Link to ="/" >
       <img className='header_logo' src="assets/logo.png" alt="" />
       </Link>
@@ -54,7 +57,7 @@ export default function Header() {
 
 
             <Link to = "/checkout">
-            <div className="header_option_basket">
+            <div className="header_option_cart">
             <ShoppingCartIcon />
             <span className='header_option_line_two header_basketCount'>
               {cart?.length}
@@ -64,10 +67,18 @@ export default function Header() {
             
             </Link>
 
+          </div>
+      
+
 
 
         </div>
+      
 
+      <div className="supportHeader">
+        
+
+      </div>
         
     </div>
 

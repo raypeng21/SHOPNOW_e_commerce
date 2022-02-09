@@ -9,6 +9,8 @@ function Checkout() {
 
   const [{cart,user}, dispatch] = useStateValue();
 
+
+
   return (
   
   
@@ -23,7 +25,9 @@ function Checkout() {
         <div className='checkout_list'>
 
           <h3>Hello, {user?.email}</h3>
-          <h2 className='checkout_title'>Your Shopping Cart</h2>
+          <h2 className='checkout_title'>Your Shopping Cart {cart.length ? ""  :  "is Empty"}</h2>
+
+
           {cart.map(item => (
                     <CheckoutProduct
                     id = {item.id}

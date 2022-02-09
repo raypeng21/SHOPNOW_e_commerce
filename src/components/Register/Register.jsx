@@ -39,7 +39,7 @@ function Register() {
             })
             .catch(error => alert(error.message))
         }else{
-            alert("Please agree the Conditions before sign up.")
+            alert.message("Please agree the Conditions before sign up.")
         }
 
 
