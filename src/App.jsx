@@ -11,6 +11,11 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import Orders from './components/Orders/Orders';
 import Register from './components/Register/Register';
+import Featured from './components/Category/Featured';
+import SmartHome from './components/Category/SmartHome';
+import HomeDecor from './components/Category/HomeDecor';
+import Electronic from './components/Category/Electronic';
+
 
 const promise = loadStripe('pk_test_51KQDfxCnboDPPE0WQvtAVudaHkNKgFm01H5xOc1hEEVMBKoCcrUvYnFxWn2HqZYY59JP3Hp6qa47kG8gADN4aDEI00I9QfaJGP');
 // Stripe Public Key
@@ -45,6 +50,29 @@ function App() {
       <Router>
 
               <Switch>
+
+                
+              <Route path='/SmartHome'>
+                    <Header />
+                    <SmartHome />
+                </Route>
+
+                <Route path='/HomeDecor'>
+                    <Header />
+                    <HomeDecor />
+                </Route>
+
+                <Route path='/Electronic'>
+                    <Header />
+                    <Electronic />
+                </Route>
+
+
+              <Route path='/featured'>
+                    <Header />
+                    <Featured />
+                </Route>
+
 
               <Route path='/orders'>
                     <Header />

@@ -76,7 +76,30 @@ export default function Header() {
       
 
       <div className="supportHeader">
-        
+        <Link to = "/home">
+          <p className='left'>Home Page</p>
+        </Link>
+    
+        <Link to = "/featured">
+        <p className='left'>Featured Products</p>
+        </Link>
+
+        <Link to = "./Electronic">
+        <p className='left'>Electronic</p>
+
+        </Link>
+
+        <Link to = "./HomeDecor">
+        <p className='left'>Home Decor</p>
+
+        </Link>
+
+        <Link to = "/SmartHome">
+        <p className='left'>Smart Home</p>
+
+        </Link>
+
+        <p className='right'>Deal Every Day</p>
 
       </div>
         

@@ -1,10 +1,14 @@
 import React from 'react';
 import Product from '../Product/Product';
 import "./home.scss"
+import Carousel from "react-bootstrap/Carousel"
+
+
 export default function Home() {
   return (
   <div className='home'>
       <div className="home_container">
+         
         <img className='home_image' src="assets/banner.png" alt="" />
       
             <div className="home_row">
